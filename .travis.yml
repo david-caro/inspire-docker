@@ -7,6 +7,9 @@ env:
   global:
   - DOCKER_VERSION=1.10.3-0~trusty
   - TAG=temp_tag
+  - secure: cMIiHyhOnJ/xp3a56PmTybrrP5I+1uW6ft3fb1+5+7zD2pWwYr/4OYxEdnD7If+YLH+ZT90wlo3tZXdeO3iduQA0cIAh4Vf4bbXe6mdYFI/10fa9tWNEkvuhfKQJUDsUtyCAKndHCOIksLOhA6u/xi+BZhDVAYnkDMtbjJHPjNFOovC7UDsm5rdMZYnHCw7gcjoKhdJjiWIjsEMuX6Dd0poVN7iXLvR/hvDFcnsjqgU49nC+YQ9mnoZEyIXo80vdbdaYhxDEnlDDxQ9bvoWK0vS3/yUfppp/sxEriUkhTZFVtxYhbiRGUvO9Q9Y9KW+eq+cOKy5l6RTms/UdFiNsOshpvv2Gd4xqScs04mxhkSyx4ePEk8Hfj0AQSf5OthxJRLU4GyhZuF3+2ts6F6sFRdkvGNMhkrlYkM/rGwb5n9lgf4VZwPZ2WT/lKMb3LLsVcgC0gh8PMR47046S/kARw1Vrie7nCHRi5VbWcJ/Z8nyedt5oVPr2BXwGJ3MeExaAfr23USxKiGw87rHJTZLBVS4aVr/NB1RutAueGob9NLFW+wxm9tJ/hvW9ojWW2mvAlxhhcSmY2UNxunBBD3cT+q5m7614dDZBug34DL8DWDz1h2Iu4zWFBbn3KjErqwjX0Rt3ZR9xDiIOkSKbv9vVvU4Shu0boRHdbB7gPZ6CsQ8=
+  - secure: EFtqF0mPOXb4zkpHHC6Zq0QeHrJf/JV11jfN/pJsZHQdrdDnJm03a0a9HENw639VBfP1GMCnQGQgFo8ZLwl/QTjrkG6ueEsrfWvIpBfGml4DiAU/E0z80ZGJiu4DwQdgVNnEZtzQI5hUewU+LDAq82i2LtYs/tQ18CqQZZAwV+e+VO9HNlqLCCHoYd0K81XEDMt75ecBNlEbIZFM1J3X3uEl5ghTd2J9z+VtdKg9IeCc6SaGDhWhSJoR6+ucbszGWygyhInvG71dS80SXpk2FM0kKCDyUObR1FHNtkYQtujn3jIR3JDlhP5cOE1HnDP1/wjRAaxuL6BZUvQ65OWYhp2uddph4CDhnkNlG+ZRQPDiR77jbIEEh2MiYrsGaYseRXojXZAJR9CL6qB6xOzN2zmo6/ClKJipLIYSs3SXyZre5GPDkpXnYfbg9ysN1BT5zTt34Bd4eYA4V49+td2oRulx81jdqoFyAA6A77Nd59Vl4JH/RhXBb7CKs48+gBEHLnSFkU0Sc1Tpa/ehS7Wjj3cV63Pf92cdFntbA7J0rGlRZSC9cK+6Du6EX8Nq+yw+2EfRg0SeMFy001mhul6dMkPXjMc0kNsSnUhV1gKXJ+PBaFP09hxTK+HeMa6EwLeW2igITwQZz5MKBORmiuMd05qczLhe68ilHb3TgxfxcLE=
+  - secure: M1AI1hhkEm2Sv/uxB+f8Bq5FyoAbaw7UCgEygV2y6p8kp/n++skfz4/EPg9l338n0pCnIpf1nat0TLu+FLahQplLKc+eIQSDXAooAZSaO9OC95IxUbf9Un8VKiabJXxbN2ToRHUuQXjAXsaHQNa3yeP3w74B9jpmQSnzTbMd/6AV3WDcaiS16eDP/zaQxHf0tXCUmMyxviNrV4xEJgWBspcJ380jAfehrKDlbemr0wBDXOCkPdcNnLtvtW9vVB3Doe4i88ooUi0aLZtUF66S2Sm21Mf1Re/k794EqckL5PudpKK0OfsJRexLCHozJDUJ7/pMwtQWFHUoq9k88A+D/eLLc7zE3kvDeI5LweTbsluRMVUidQIyV6rV1sVpesu5z0iVn5pN+fUR/cNYoO9cci6EBxW0cNWzM6eXZpyTZey1wXnnoCdySCgQuxtRmdomrEG3UWeys2JTT1TPv23vQZG0Qpu8QIiyeo14FafgDHgdRI7XK8S4M05SaOPe7Az9ETKYyDvmmx0Es8FhkMU0xinjasGI3PUG63pSlamgRfOK1czPyz3v3FQb6Ynfed1Xb9TA4JU72LJxhSk4Q140YEKqLY8J+fmShm/vFtYgFoX2P+8CQpBmPAquuB0JreMbBjhsrmG9kzA5l6k2oJ6ou8YsM4pAIrKtE73XFRDyfZs=
 
 before_install:
   # List available docker versions.
@@ -18,17 +21,17 @@ before_install:
 matrix:
   include:
   - env:
-    - DOCKER_PROJECT=inspirehep/python-base
+    - DOCKER_PROJECT=dcaroest/inspirehep-python-base
     - DOCKER_IMAGE_TAG=2.7
     - DOCKERFILE=python_base/Dockerfile
     - ARGS='--build-arg=INSPIRE_PYTHON_VERSION=2.7'
   - env:
-    - DOCKER_PROJECT=inspirehep/python-base
+    - DOCKER_PROJECT=dcaroest/inspirehep-python-base
     - DOCKER_IMAGE_TAG=latest
     - DOCKERFILE=python_base/Dockerfile
     - ARGS='--build-arg=INSPIRE_PYTHON_VERSION=2.7'
   - env:
-    - DOCKER_PROJECT=inspirehep/elasticsearch
+    - DOCKER_PROJECT=dcaroest/inspirehep-elasticsearch
     - DOCKER_IMAGE_TAG=latest
     - DOCKERFILE=elasticsearch/Dockerfile
     - ARGS=''
